@@ -1,7 +1,9 @@
-export default class GameSavingLoader {
-  // static load() {
-  //   const data = read(); // возвращается Promise!
-  //   const value = json(data); // возвращается Promise!
-  //   return value;
-  // }
-}
+import GameSaving from './GameSaving';
+import GameSavingLoader from './GameSavingLoader';
+
+GameSavingLoader.load().then(
+  (saving) => new GameSaving(saving),
+  (error) => {
+    console.log(error);
+  }
+);
