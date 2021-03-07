@@ -3,7 +3,5 @@ import GameSavingLoader from './GameSavingLoader';
 
 GameSavingLoader.load().then(
   (saving) => new GameSaving(saving),
-  (error) => {
-    console.log(error);
-  }
+  (error) => error
 );
